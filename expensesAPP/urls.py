@@ -6,3 +6,6 @@ urlpatterns = [
     path("", views.index, name='expenses'),
     path("add-expense/", views.addExpense, name='add-expense'),
 ]
+
+name = 'Dennis Akagha'
+
