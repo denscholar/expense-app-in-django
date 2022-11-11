@@ -7,5 +7,3 @@ urlpatterns = [
     path("add-expense/", views.addExpense, name='add-expense'),
 ]
 
-name = 'Dennis Akagha'
-

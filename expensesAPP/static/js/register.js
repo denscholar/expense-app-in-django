@@ -4,8 +4,9 @@ const emailField = document.querySelector('#emailField')
 const emailFeedBack = document.querySelector('.emailFeedBack')
 const showPassword = document.querySelector('.show-password')
 const password = document.querySelector('#password')
+const submitButton = document.querySelector('.btn-disable')
 
-console.log(showPassword);
+console.log(submitButton)
 
 usernameField.addEventListener('keyup', (e)=>{
     e.preventDefault()
@@ -23,9 +24,12 @@ usernameField.addEventListener('keyup', (e)=>{
         .then((data)=>{
             console.log('data', data);
             if(data.username_error){
+                submitButton.disabled = true
                 usernameField.classList.add("is_invalid")
                 usernameFeedbackArea.style.display = 'block'
                 usernameFeedbackArea.innerHTML = `<p>${data.username_error}</p>`
+            }else{
+                submitButton.disabled = false
             }
         })
     }
@@ -47,9 +51,12 @@ emailField.addEventListener('keyup', (e)=>{
         .then((data)=>{
             console.log('data', data);
             if(data.email_error){
+                submitButton.disabled = true
                 emailField.classList.add("is_invalid")
                 emailFeedBack.style.display = 'block'
                 emailFeedBack.innerHTML = `<p>${data.email_error}</p>`
+            }else{
+                submitButton.disabled = false
             }
         })
     }
